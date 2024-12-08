@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="14a81b94-b077-469c-8282-23034d3bd5d0" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/PlataformMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera_Guide.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PrefabBullet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boss.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../DaVinci/Final Prog/Assets/Scripts/Hero.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CameraScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/WhiskeyContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Falling_Script.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PlataformScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BossBullet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Parallax.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shotgun.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Hero.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Hero.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LightFollow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerLight.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PrefabBullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Parallax.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ParallaxGuideMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/CameraMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera_Guide.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraFollowX.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NavigationButtons.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BossBullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Falling_Script.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Boss.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shotgun.cs" />
+        <option value="$PROJECT_DIR$/Assets/WhiskeyContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/CameraScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/MobilePlataform.cs" />
+        <option value="$PROJECT_DIR$/Assets/PlataformMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/PlataformScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EventManager.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1QkjXQJN0MLuBLCQZuvx8f0xBAX" />
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="do_not_show_solution_notification" value="true" />
+    <property name="settings.editor.selected.configurable" value="CodeInspectionSettingsId" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="14a81b94-b077-469c-8282-23034d3bd5d0" name="Default Changelist" comment="" />
+      <created>1568321527828</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568321527828</updated>
+      <workItem from="1568321532077" duration="458000" />
+      <workItem from="1568322009678" duration="317000" />
+      <workItem from="1568322468663" duration="9191000" />
+      <workItem from="1568474211060" duration="628000" />
+      <workItem from="1568481496424" duration="99000" />
+      <workItem from="1568481617317" duration="11000" />
+      <workItem from="1568481744477" duration="76000" />
+      <workItem from="1568482850277" duration="146000" />
+      <workItem from="1568483791583" duration="598000" />
+      <workItem from="1568574198796" duration="8140000" />
+      <workItem from="1569250150854" duration="5497000" />
+      <workItem from="1569256270722" duration="4371000" />
+      <workItem from="1569271895642" duration="5903000" />
+      <workItem from="1569410597712" duration="5430000" />
+      <workItem from="1571077884013" duration="2147000" />
+      <workItem from="1573128802732" duration="6474000" />
+      <workItem from="1573471111897" duration="9791000" />
+      <workItem from="1573649489263" duration="3933000" />
+      <workItem from="1573658155172" duration="3942000" />
+      <workItem from="1573669461235" duration="1743000" />
+      <workItem from="1574856000029" duration="2029000" />
+      <workItem from="1575761468720" duration="822000" />
+      <workItem from="1575839681148" duration="1650000" />
+      <workItem from="1575970808361" duration="305000" />
+      <workItem from="1575979947675" duration="9374000" />
+      <workItem from="1576006359847" duration="1177000" />
+      <workItem from="1580231460901" duration="748000" />
+      <workItem from="1580907514306" duration="763000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="177" key="#Notifications" />
+    <state x="552" y="177" key="#Notifications/1920.1080/1920.1080" />
+    <state x="2560" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" />
+    <state x="2560" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.1080/1920.1080" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/1920.1080/1920.1080" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Player.cs</url>
+          <line>128</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" initialLine="128">
+            <startOffsets>
+              <option value="3111" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3126" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

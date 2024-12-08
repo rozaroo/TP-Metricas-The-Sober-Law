@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="A:\Documentos\Facu\TP1\TP1_Sossich_Massara" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="CameraScript.cs" t="Include" />
+        <e p="PlataformMovement.cs" t="Include" />
+        <e p="PlataformScript.cs" t="Include" />
+        <e p="PlataformScritp.cs" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="Boss.cs" t="Include" />
+          <e p="BossBullet.cs" t="Include" />
+          <e p="Camera_Guide.cs" t="Include" />
+          <e p="CameraMenu.cs" t="Include" />
+          <e p="EventManager.cs" t="Include" />
+          <e p="Falling_Script.cs" t="Include" />
+          <e p="MainMenuManager.cs" t="Include" />
+          <e p="Parallax.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
+          <e p="PrefabBullet.cs" t="Include" />
+          <e p="Spawner.cs" t="Include" />
+          <e p="Spider.cs" t="Include" />
+        </e>
+        <e p="Shotgun.cs" t="Include" />
+        <e p="WhiskeyContainer.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="TP1_Sossich_Massara.sln" t="IncludeFlat" />
+    </e>
+    <e p="C:\Users\TVS777\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\TVS777\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_TP1_Sossich_Massara.288150540.00" t="ExcludeRecursive" />
+  </component>
+</project>

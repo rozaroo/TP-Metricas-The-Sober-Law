@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c970d5ddc6944f646aaa3cd0774547bb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - castingTransform: {instanceID: 0}
+  - groundCheck: {instanceID: 0}
+  - bulletPrefab: {instanceID: 0}
+  - healingBox: {instanceID: 0}
+  - Dificultad: {fileID: 11400000, guid: cd7fa882380808e4f852185d44c9ae46, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

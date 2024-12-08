@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - EnemyBullet
+  - Healing
+  - StartPos
+  - HealthBar
+  - Enemy
+  - Counter
+  - DefeatScreen
+  - eplat
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Scenario
+  - Objects
+  - Enemies
+  - Enemies bullets
+  - Player
+  - Decorations
+  - EnemyPlataform
+  - Blocking
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Scenario
+    uniqueID: 2620496789
+    locked: 0
+  - name: Objects
+    uniqueID: 3606606263
+    locked: 0
+  - name: Enemies
+    uniqueID: 3573911859
+    locked: 0
+  - name: UI
+    uniqueID: 3387215653
+    locked: 0
