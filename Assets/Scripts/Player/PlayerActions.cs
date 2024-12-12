@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerActions : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class PlayerActions : MonoBehaviour
     Vector3 _velocity;
     Vector3 _position;
 
+    private int sPressCount = 0; //Contador de veces que se presiona S
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -40,6 +43,15 @@ public class PlayerActions : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            sPressCount++;
+            //Obtener el ID del nivel actual
+            string levelID = SceneManager.GetActiveScene().name;
+            //Enviar evento analítico
+            AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID);
+            Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}.");
+        }
         jumpCooldown -= Time.deltaTime;
         if (jumpCooldown < 0) jumpCooldown = 0;
 
@@ -113,7 +125,7 @@ public class PlayerActions : MonoBehaviour
             isJumping = false;
             _animator.SetBool("IsJumping", false);
         }
-        if (other.gameObject.CompareTag("eplat") && Input.GetKey(KeyCode.S)) _boxCollider.isTrigger = true;
+        if (other.gameObject.CompareTag("eplat") && Input.GetKey(KeyCode.S)) _boxCollider.isTrigger = true; //Acá es cuando presiono S
     }
     void OnTriggerExit2D(Collider2D other)
     {

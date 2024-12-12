@@ -131,8 +131,6 @@ public class Player : MonoBehaviour
     private void NotifyHpChangedToObservers()
     {
         foreach (var observer in hpObservers)
-        {
             observer.OnHpChanged();
-        }
     }
 }
