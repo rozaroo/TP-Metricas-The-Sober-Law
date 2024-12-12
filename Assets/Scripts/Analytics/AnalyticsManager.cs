@@ -36,12 +36,13 @@ public class AnalyticsManager : MonoBehaviour
         Debug.Log($"Consent given! We can get the data!!!");
     }
 
-    public void ButtonSPressed(int num, string level_id)
+    public void ButtonSPressed(int num, string level_id, string user_id)
     {
         ButtonSPressedEvent evt = new ButtonSPressedEvent
         {
             number = num,
-            level_id = level_id
+            level_id = level_id,
+            user_id = user_id
         };
 
         AnalyticsService.Instance.RecordEvent(evt);

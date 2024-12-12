@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public bool Easy;
     public bool VeryEasy;
     public static event Action<bool> OnGamePauseStateChanged;
+    public string userId { get; private set; }
     public static void InvokeGamePauseStateChanged(bool isPaused)
     {
         OnGamePauseStateChanged?.Invoke(isPaused);
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
             player.gameObject.SetActive(true);
             player.transform.position = startPos;
         }
+        InitializeUserId();
     }
     void OnEnable()
     {
@@ -70,7 +72,18 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad2)) ChoseEasy();
         if (Input.GetKeyDown(KeyCode.Keypad3)) ChoseVeryEasy();
     }
-    
+    private void InitializeUserId()
+    {
+        // Generar o cargar el user_id
+        if (PlayerPrefs.HasKey("user_id")) userId = PlayerPrefs.GetString("user_id");
+        else
+        {
+            userId = Guid.NewGuid().ToString(); // Genera un ID único
+            PlayerPrefs.SetString("user_id", userId);
+            PlayerPrefs.Save();
+        }
+        Debug.Log($"User ID: {userId}");
+    }
     public void LoadMainMenu()
     {
         Unpause();

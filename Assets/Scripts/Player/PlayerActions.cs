@@ -48,9 +48,11 @@ public class PlayerActions : MonoBehaviour
             sPressCount++;
             //Obtener el ID del nivel actual
             string levelID = SceneManager.GetActiveScene().name;
+            // Obtener el user_id desde el GameManager
+            string userId = GameManager.Instance.userId;
             //Enviar evento analítico
-            AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID);
-            Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}.");
+            AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID,userId);
+            Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
         }
         jumpCooldown -= Time.deltaTime;
         if (jumpCooldown < 0) jumpCooldown = 0;
