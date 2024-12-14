@@ -51,6 +51,10 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
     //Eventos
     public static event Action<bool> OnBossDefeatedStateChanged;
     public static event Action Level2LogicEvent;
+
+    private int medikitspicked = 0;
+    private int sPressCount = 0; //Contador de veces que se presiona S
+
     void Start()
     {
         counter2 = 30;
@@ -88,7 +92,17 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
         {
             if (initScreen.canvasGroup.alpha > 0) return;
             BossSetter();
-            if (GameManager.Instance.isBossDefeated) OnBossDefeatedStateChanged?.Invoke(true);
+            if (GameManager.Instance.isBossDefeated) 
+            {
+                //Obtener el ID del nivel actual
+                string levelID = SceneManager.GetActiveScene().name;
+                // Obtener el user_id desde el GameManager
+                string userId = GameManager.Instance.userId;
+                AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID, userId);
+                Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
+                OnBossDefeatedStateChanged?.Invoke(true);
+            }
+            
             UpdateBossLife();
         }
     }
@@ -248,7 +262,20 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
             enemiesToDefeat--;
             if (enemyCounter == null) enemyCounter = GameObject.FindGameObjectWithTag("Counter").GetComponent<Text>();
             enemyCounter.text = enemiesToDefeat.ToString();
-            if (enemiesToDefeat == 0) GameManager.Instance.isLevel1Completed = true;
+            if (enemiesToDefeat == 0) 
+            {
+                GameManager.Instance.isLevel1Completed = true;
+                //Enviar evento analítico
+                //Obtener el ID del nivel actual
+                string levelID = SceneManager.GetActiveScene().name;
+                // Obtener el user_id desde el GameManager
+                string userId = GameManager.Instance.userId;
+                AnalyticsManager.instance.medkitPickedUp(medikitspicked, levelID, userId);
+                Debug.Log($"La cantidad de botiquines recojidos fue {medikitspicked}, en el nivel {levelID}, por el usuario {userId}");
+                AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID, userId);
+                Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
+            }
+
 
         }
         if (CurrentNivel == 2)
@@ -329,6 +356,15 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
         if (counter2 <= 0)
         {
             initScreen.isLevelEnded = true;
+            //Enviar evento analítico
+            //Obtener el ID del nivel actual
+            string levelID = SceneManager.GetActiveScene().name;
+            // Obtener el user_id desde el GameManager
+            string userId = GameManager.Instance.userId;
+            AnalyticsManager.instance.medkitPickedUp(medikitspicked, levelID, userId);
+            Debug.Log($"La cantidad de botiquines recojidos fue {medikitspicked}, en el nivel {levelID}, por el usuario {userId}");
+            AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID, userId);
+            Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
             if (initScreen.GetComponent<CanvasGroup>().alpha == 1) GameManager.Instance.ChangeLevel(3);
         }
 
@@ -353,5 +389,13 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
                 boxTimer = 0;
             }
         }
+    }
+    public void IncrementMedikitCount()
+    {
+        medikitspicked++;
+    }
+    public void IncrementScounter() 
+    {
+        sPressCount++;
     }
 }

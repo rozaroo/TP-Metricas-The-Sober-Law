@@ -37,6 +37,8 @@ public class HealthScript : MonoBehaviour
         if (collision.gameObject.GetComponent<Player>() != null)
         {
             collision.gameObject.GetComponent<Player>().RefreshHealth(30);
+            LevelManager levelManager = FindObjectOfType<LevelManager>();
+            if (levelManager != null) levelManager.IncrementMedikitCount();
             DestroyHealth();
         }
     }

@@ -10,7 +10,7 @@ public class MainMenuManager : MonoBehaviour
 
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject levelsButtons;
-
+    private int InstructionsPressCount = 0; //Contador de veces que se presiona instrucciones
     private void Awake()
     {
         credits.SetActive(false);
@@ -21,6 +21,12 @@ public class MainMenuManager : MonoBehaviour
     }
     public void ToggleCredits()
     {
+        InstructionsPressCount++;
+        // Obtener el user_id desde el GameManager
+        string userId = GameManager.Instance.userId;
+        //Enviar evento analítico
+        AnalyticsManager.instance.instructionsClicked(InstructionsPressCount, userId);
+        Debug.Log($"La cantidad de veces que se presiono el boton instrucciones fue {InstructionsPressCount}, por el usuario {userId}");
         credits.SetActive(!credits.active);
     }
     public void LoadLevel1()

@@ -1,13 +1,46 @@
 
 public class ButtonSPressedEvent : Unity.Services.Analytics.Event
 {
-   public ButtonSPressedEvent() : base("buttonPressed")
+   public ButtonSPressedEvent() : base("ButtonSPressed")
    {
 
    }
 
-    public int number { set { SetParameter("number", value); } }
-    public string level_id { set { SetParameter("level_id", value); } }
-    public string user_id { set { SetParameter("user_id", value); } }
+    public int Num { set { SetParameter("Num", value); } }
+    public string Level_ID { set { SetParameter("Level_ID", value); } }
+    public string usuario_identified { set { SetParameter("usuario_identified", value); } }
+}
+
+public class instructionsClickedEvent : Unity.Services.Analytics.Event 
+{
+    public instructionsClickedEvent() : base("instructionsClicked") 
+    {
+
+    }
+    public int Num { set { SetParameter("Num", value); } }
+    public string usuario_identified { set { SetParameter("usuario_identified", value); } }
+}
+
+public class medkitPickedEvent : Unity.Services.Analytics.Event 
+{
+    public medkitPickedEvent() : base("medkitPickedUp") 
+    {
+
+    }
+    public int Cant { set { SetParameter("Cant", value); } }
+    public string Level_ID { set { SetParameter("Level_ID", value); } }
+    public string usuario_identified { set { SetParameter("usuario_identified", value); } }
+}
+
+public class playerDeathsPerLevelEvent : Unity.Services.Analytics.Event 
+{
+    public playerDeathsPerLevelEvent() : base("playerDeathsPerLevel") 
+    {
+        
+    }
+    public int DeathsPerLevel { set { SetParameter("Muertes", value); } }
+    public string Enemy_ID { set { SetParameter("Enemy_ID", value); } }
+    public string Level_ID { set { SetParameter("Level_ID", value); } }
+    public string usuario_identified { set { SetParameter("usuario_identified", value); } }
 }
 

@@ -40,11 +40,44 @@ public class AnalyticsManager : MonoBehaviour
     {
         ButtonSPressedEvent evt = new ButtonSPressedEvent
         {
-            number = num,
-            level_id = level_id,
-            user_id = user_id
+            Num = num,
+            Level_ID = level_id,
+            usuario_identified = user_id
         };
 
+        AnalyticsService.Instance.RecordEvent(evt);
+        AnalyticsService.Instance.Flush();
+    }
+    public void instructionsClicked(int num, string user_id) 
+    {
+        instructionsClickedEvent evt = new instructionsClickedEvent
+        {
+            Num = num,
+            usuario_identified = user_id
+        };
+        AnalyticsService.Instance.RecordEvent(evt);
+        AnalyticsService.Instance.Flush();
+    }
+    public void medkitPickedUp(int cant, string level_id, string user_id) 
+    {
+        medkitPickedEvent evt = new medkitPickedEvent
+        {
+            Cant = cant,
+            Level_ID = level_id,
+            usuario_identified = user_id
+        };
+        AnalyticsService.Instance.RecordEvent(evt);
+        AnalyticsService.Instance.Flush();
+    }
+    public void playerDeathsPerLevel(int deathsPerLevel, string enemy_id, string level_id, string user_id) 
+    {
+        playerDeathsPerLevelEvent evt = new playerDeathsPerLevelEvent
+        {
+            DeathsPerLevel = deathsPerLevel,
+            Enemy_ID = enemy_id,
+            Level_ID = level_id,
+            usuario_identified = user_id
+        };
         AnalyticsService.Instance.RecordEvent(evt);
         AnalyticsService.Instance.Flush();
     }
