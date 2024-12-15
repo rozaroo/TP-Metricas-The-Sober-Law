@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     //Observer
     private List<IPlayerObserver> playerObservers = new List<IPlayerObserver>();
     private List<IHpObserver> hpObservers = new List<IHpObserver>();
+
+    public PersistantData PData;
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -30,11 +32,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        PData = GameObject.FindObjectOfType<PersistantData>();
         ColliderResize();
-        if (GameManager.Instance.player == null)
-        {
-            GameManager.Instance.player = this.gameObject;
-        }
+        if (GameManager.Instance.player == null) GameManager.Instance.player = this.gameObject;
 
         playerHp = _maxHp;
         GameManager.Instance.gameOver = false;
@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
         {
             NotifyPlayerDead();
             GameManager.Instance.gameOver = true;
+            PData.IncrementDeaths();
         }
         if (_spriteRenderer.color != Color.white) _spriteRenderer.color += new Color(0, 1, 1, 0) * Time.deltaTime;
     }

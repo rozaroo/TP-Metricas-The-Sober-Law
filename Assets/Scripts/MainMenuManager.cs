@@ -11,12 +11,15 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject levelsButtons;
     private int InstructionsPressCount = 0; //Contador de veces que se presiona instrucciones
+    public PersistantTimerData PTData;
     private void Awake()
     {
+        PTData = GameObject.FindObjectOfType<PersistantTimerData>();
         credits.SetActive(false);
     }
     public void QuitGame()
     {
+        PTData.UploadData();
         Application.Quit();
     }
     public void ToggleCredits()

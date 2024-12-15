@@ -81,4 +81,14 @@ public class AnalyticsManager : MonoBehaviour
         AnalyticsService.Instance.RecordEvent(evt);
         AnalyticsService.Instance.Flush();
     }
+    public void gameFinished(float playTime, string user_id) 
+    {
+        gameFinishedEvent evt = new gameFinishedEvent
+        {
+            PlayTime = playTime,
+            usuario_identified = user_id
+        };
+        AnalyticsService.Instance.RecordEvent(evt);
+        AnalyticsService.Instance.Flush();
+    }
 }

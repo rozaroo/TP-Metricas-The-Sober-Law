@@ -38,9 +38,19 @@ public class playerDeathsPerLevelEvent : Unity.Services.Analytics.Event
     {
         
     }
-    public int DeathsPerLevel { set { SetParameter("Muertes", value); } }
+    public int DeathsPerLevel { set { SetParameter("DeathsPerLevel", value); } }
     public string Enemy_ID { set { SetParameter("Enemy_ID", value); } }
     public string Level_ID { set { SetParameter("Level_ID", value); } }
+    public string usuario_identified { set { SetParameter("usuario_identified", value); } }
+}
+
+public class gameFinishedEvent : Unity.Services.Analytics.Event
+{
+    public gameFinishedEvent() : base("gameFinished")
+    {
+
+    }
+    public float PlayTime { set { SetParameter("PlayTime", value); } }
     public string usuario_identified { set { SetParameter("usuario_identified", value); } }
 }
 

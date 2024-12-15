@@ -55,8 +55,12 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
     private int medikitspicked = 0;
     private int sPressCount = 0; //Contador de veces que se presiona S
 
+    public PersistantData PData;
+    public PersistantTimerData PTData;
     void Start()
     {
+        PData = GameObject.FindObjectOfType<PersistantData>();
+        PTData = GameObject.FindObjectOfType<PersistantTimerData>();
         counter2 = 30;
         GameManager.OnGamePauseStateChanged += HandleGamePauseStateChanged;
         OnBossDefeatedStateChanged += HandleBossDefeatedStateChanged;
@@ -100,6 +104,7 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
                 string userId = GameManager.Instance.userId;
                 AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID, userId);
                 Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
+                PData.UploadData();
                 OnBossDefeatedStateChanged?.Invoke(true);
             }
             
@@ -117,6 +122,7 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
     }
     public void Exit()
     {
+        PTData.UploadData();
         Application.Quit();
     }
 
@@ -274,6 +280,7 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
                 Debug.Log($"La cantidad de botiquines recojidos fue {medikitspicked}, en el nivel {levelID}, por el usuario {userId}");
                 AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID, userId);
                 Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
+                PData.UploadData();
             }
 
 
@@ -365,6 +372,7 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
             Debug.Log($"La cantidad de botiquines recojidos fue {medikitspicked}, en el nivel {levelID}, por el usuario {userId}");
             AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID, userId);
             Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
+            PData.UploadData();
             if (initScreen.GetComponent<CanvasGroup>().alpha == 1) GameManager.Instance.ChangeLevel(3);
         }
 
