@@ -8,7 +8,7 @@ public class PersistantData : MonoBehaviour
     private int deathsinlevelone = 0;
     private int deathsinleveltwo = 0;
     private int deathsinlevelthree = 0;
-    [SerializeField] private bool dontDestroyOnLoad = true;
+    private bool dontDestroyOnLoad = true;
     void Awake()
     {
         if (Instance == null)

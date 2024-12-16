@@ -22,7 +22,7 @@ public class MainMenuManager : MonoBehaviour
         PTData.UploadData();
         Application.Quit();
     }
-    public void ToggleCredits()
+    public void InstructionsScreen()
     {
         InstructionsPressCount++;
         // Obtener el user_id desde el GameManager
@@ -30,7 +30,11 @@ public class MainMenuManager : MonoBehaviour
         //Enviar evento analítico
         AnalyticsManager.instance.instructionsClicked(InstructionsPressCount, userId);
         Debug.Log($"La cantidad de veces que se presiono el boton instrucciones fue {InstructionsPressCount}, por el usuario {userId}");
-        credits.SetActive(!credits.active);
+        credits.SetActive(true);
+    }
+    public void InstructionsScreenOff()
+    {
+        credits.SetActive(false);
     }
     public void LoadLevel1()
     {

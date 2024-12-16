@@ -207,8 +207,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 116567027}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ToggleCredits
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: InstructionsScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1125,8 +1125,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 116567027}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ToggleCredits
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: InstructionsScreenOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
