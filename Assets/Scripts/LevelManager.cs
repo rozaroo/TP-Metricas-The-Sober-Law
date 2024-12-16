@@ -59,7 +59,7 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
     public PersistantTimerData PTData;
     void Start()
     {
-        PData = GameObject.FindObjectOfType<PersistantData>();
+        if (PData == null) PData = GameObject.FindObjectOfType<PersistantData>();
         PTData = GameObject.FindObjectOfType<PersistantTimerData>();
         counter2 = 30;
         GameManager.OnGamePauseStateChanged += HandleGamePauseStateChanged;

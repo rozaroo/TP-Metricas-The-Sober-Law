@@ -6432,6 +6432,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -713250230664325507, guid: 2df955531d576f4439b469fa0437eb94,
         type: 3}
+      propertyPath: PData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -713250230664325507, guid: 2df955531d576f4439b469fa0437eb94,
+        type: 3}
       propertyPath: hpFill
       value: 
       objectReference: {fileID: 250583982}

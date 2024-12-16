@@ -606,7 +606,7 @@ MonoBehaviour:
   isReturning: 0
   winnerScreen: {fileID: 0}
   bossLife: {fileID: 0}
-  PData: {fileID: 0}
+  PData: {fileID: 1830863607}
   PTData: {fileID: 0}
 --- !u!4 &84191826
 Transform:
@@ -8882,7 +8882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 434, y: -49.916668}
+  m_AnchoredPosition: {x: 434, y: -49.916626}
   m_SizeDelta: {x: 868, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1693675164
@@ -10165,7 +10165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d91a089b969fb84a914ef73db3412ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvlmanager: {fileID: 0}
+  lvlmanager: {fileID: 84191825}
 --- !u!4 &1830863608
 Transform:
   m_ObjectHideFlags: 0

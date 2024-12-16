@@ -4,46 +4,41 @@ using UnityEngine.SceneManagement;
 
 public class PersistantData : MonoBehaviour
 {
-    public LevelManager lvlmanager;
     public static PersistantData Instance { get; private set; }
     private int deathsinlevelone = 0;
     private int deathsinleveltwo = 0;
     private int deathsinlevelthree = 0;
-
+    [SerializeField] private bool dontDestroyOnLoad = true;
     void Awake()
     {
-        // Singleton pattern
-        if (Instance != null && Instance != this)
+        if (Instance == null)
         {
-            Destroy(gameObject);
-            return;
+            Instance = this;
+            if (dontDestroyOnLoad) DontDestroyOnLoad(gameObject);
+            else Destroy(gameObject);
         }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        else Destroy(gameObject);
     }
-    void Start()
-    {
-        lvlmanager= GameObject.FindObjectOfType<LevelManager>();
-        if (lvlmanager == null) Debug.LogError("No se encontró el LevelManager en la escena.");
-    }
+
     public void IncrementDeaths()
     {
-        if (lvlmanager == null)
+        switch (SceneManager.GetActiveScene().buildIndex)
         {
-            Debug.LogError("LevelManager es null al intentar incrementar muertes.");
-            return;
+            case 1:
+                deathsinlevelone++;
+                break;
+            case 2:
+                deathsinleveltwo++;
+                break;
+            case 3:
+                deathsinlevelthree++;
+                break;
+            default:
+                break;
         }
-        if (lvlmanager.CurrentNivel == 1) deathsinlevelone++;
-        if (lvlmanager.CurrentNivel == 2) deathsinleveltwo++;
-        if (lvlmanager.CurrentNivel == 3) deathsinlevelthree++;
     }
     public void UploadData()
     {
-        if (lvlmanager == null)
-        {
-            Debug.LogError("LevelManager es null al intentar subir datos.");
-            return;
-        }
         if (GameManager.Instance == null || GameManager.Instance.userId == null)
         {
             Debug.LogError("GameManager o userId es null al intentar subir datos.");
@@ -55,19 +50,19 @@ public class PersistantData : MonoBehaviour
         string levelID = SceneManager.GetActiveScene().name;
         // Obtener el user_id desde el GameManager
         string userId = GameManager.Instance.userId;
-        if (lvlmanager.CurrentNivel == 1)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             AnalyticsManager.instance.playerDeathsPerLevel(deathsinlevelone, CommonEnemy, levelID, userId);
             Debug.Log($"La cantidad de veces que murio el jugador {userId} en el nivel {levelID} fue {deathsinlevelone} por un {CommonEnemy}");
         }
-        if (lvlmanager.CurrentNivel == 2)
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             AnalyticsManager.instance.playerDeathsPerLevel(deathsinleveltwo, CommonEnemy, levelID, userId);
             Debug.Log($"La cantidad de veces que murio el jugador {userId} en el nivel {levelID} fue {deathsinleveltwo} por un {CommonEnemy}");
         }
-        if (lvlmanager.CurrentNivel == 3)
+        if (SceneManager.GetActiveScene().buildIndex == 3)
         {
-            AnalyticsManager.instance.playerDeathsPerLevel(deathsinleveltwo, CommonEnemy, levelID, userId);
+            AnalyticsManager.instance.playerDeathsPerLevel(deathsinlevelthree, BossEnemy, levelID, userId);
             Debug.Log($"La cantidad de veces que murio el jugador {userId} en el nivel {levelID} fue {deathsinlevelthree} por el {BossEnemy}");
         }
     }

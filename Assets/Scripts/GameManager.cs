@@ -27,6 +27,10 @@ public class GameManager : MonoBehaviour
     public bool VeryEasy;
     public static event Action<bool> OnGamePauseStateChanged;
     public string userId { get; private set; }
+
+    private int deathsinlevelone = 0;
+    private int deathsinleveltwo = 0;
+    private int deathsinlevelthree = 0;
     public static void InvokeGamePauseStateChanged(bool isPaused)
     {
         OnGamePauseStateChanged?.Invoke(isPaused);
@@ -144,5 +148,4 @@ public class GameManager : MonoBehaviour
         Easy = false;
         VeryEasy = true;
     }
-
 }
