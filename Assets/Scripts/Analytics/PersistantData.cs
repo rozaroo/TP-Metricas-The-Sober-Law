@@ -27,7 +27,7 @@ public class PersistantData : MonoBehaviour
             case 1:
                 deathsinlevelone++;
                 Debug.Log($"Muertes registradas en Nivel 1: {deathsinlevelone}");
-                UploadData();
+                //UploadData();
                 break;
             case 2:
                 deathsinleveltwo++;
@@ -52,13 +52,12 @@ public class PersistantData : MonoBehaviour
         string levelID = SceneManager.GetActiveScene().name;
         // Obtener el user_id desde el GameManager
         string userId = GameManager.Instance.userId;
-        if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            AnalyticsManager.instance.playerDeathsPerLevel(deathsinlevelone, CommonEnemy, levelID, userId);
-            Debug.Log($"La cantidad de veces que murio el jugador {userId} en el nivel {levelID} fue {deathsinlevelone} por un {CommonEnemy}");
-        }
+        string level1ID = "Level_1";
+       
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
+            AnalyticsManager.instance.playerDeathsPerLevel(deathsinlevelone, CommonEnemy, level1ID, userId);
+            Debug.Log($"La cantidad de veces que murio el jugador {userId} en el nivel {level1ID} fue {deathsinlevelone} por un {CommonEnemy}");
             AnalyticsManager.instance.playerDeathsPerLevel(deathsinleveltwo, CommonEnemy, levelID, userId);
             Debug.Log($"La cantidad de veces que murio el jugador {userId} en el nivel {levelID} fue {deathsinleveltwo} por un {CommonEnemy}");
         }
