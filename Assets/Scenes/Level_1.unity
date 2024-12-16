@@ -5625,6 +5625,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4615630745628732938, guid: 89ee7208291cf6e43b3a8630fe3ceee5,
+        type: 3}
+      propertyPath: PData
+      value: 
+      objectReference: {fileID: 1830863607}
     - target: {fileID: 4615630745628732939, guid: 89ee7208291cf6e43b3a8630fe3ceee5,
         type: 3}
       propertyPath: m_RootOrder
@@ -10165,7 +10170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d91a089b969fb84a914ef73db3412ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvlmanager: {fileID: 84191825}
 --- !u!4 &1830863608
 Transform:
   m_ObjectHideFlags: 0
