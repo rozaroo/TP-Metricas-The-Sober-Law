@@ -46,7 +46,8 @@ public class Player : MonoBehaviour
         {
             NotifyPlayerDead();
             GameManager.Instance.gameOver = true;
-            PData.IncrementDeaths();
+            if (PData != null) PData.IncrementDeaths();
+            else Debug.LogError("PersistantData es null en Player.Update().");
         }
         if (_spriteRenderer.color != Color.white) _spriteRenderer.color += new Color(0, 1, 1, 0) * Time.deltaTime;
     }

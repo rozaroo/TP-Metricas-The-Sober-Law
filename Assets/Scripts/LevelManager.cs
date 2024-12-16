@@ -104,10 +104,10 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
                 string userId = GameManager.Instance.userId;
                 AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID, userId);
                 Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
-                PData.UploadData();
+                if (PData != null) PData.UploadData();
+                else Debug.LogError("PersistantData es null al intentar subir datos en LevelManager.");
                 OnBossDefeatedStateChanged?.Invoke(true);
             }
-            
             UpdateBossLife();
         }
     }
@@ -125,7 +125,11 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
         PTData.UploadData();
         Application.Quit();
     }
-
+    public void Restart()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
     void RefreshHPBar()
     {
         hpFill.fillAmount = player.PlayerHealth / 100f;

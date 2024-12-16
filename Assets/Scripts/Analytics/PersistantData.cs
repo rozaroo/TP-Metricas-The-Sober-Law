@@ -28,12 +28,27 @@ public class PersistantData : MonoBehaviour
     }
     public void IncrementDeaths()
     {
+        if (lvlmanager == null)
+        {
+            Debug.LogError("LevelManager es null al intentar incrementar muertes.");
+            return;
+        }
         if (lvlmanager.CurrentNivel == 1) deathsinlevelone++;
         if (lvlmanager.CurrentNivel == 2) deathsinleveltwo++;
         if (lvlmanager.CurrentNivel == 3) deathsinlevelthree++;
     }
     public void UploadData()
     {
+        if (lvlmanager == null)
+        {
+            Debug.LogError("LevelManager es null al intentar subir datos.");
+            return;
+        }
+        if (GameManager.Instance == null || GameManager.Instance.userId == null)
+        {
+            Debug.LogError("GameManager o userId es null al intentar subir datos.");
+            return;
+        }
         string CommonEnemy = "Mafioso común";
         string BossEnemy = "Jefe de la mafia";
         //Obtener el ID del nivel actual
