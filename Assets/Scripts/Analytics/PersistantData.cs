@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 public class PersistantData : MonoBehaviour
 {
     public static PersistantData Instance { get; private set; }
-    private int deathsinlevelone = 0;
-    private int deathsinleveltwo = 0;
-    private int deathsinlevelthree = 0;
+    private int deathsinlevelone;
+    private int deathsinleveltwo;
+    private int deathsinlevelthree;
     private bool dontDestroyOnLoad = true;
     void Awake()
     {
@@ -26,6 +26,8 @@ public class PersistantData : MonoBehaviour
         {
             case 1:
                 deathsinlevelone++;
+                Debug.Log($"Muertes registradas en Nivel 1: {deathsinlevelone}");
+                UploadData();
                 break;
             case 2:
                 deathsinleveltwo++;
