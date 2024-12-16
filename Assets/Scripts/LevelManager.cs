@@ -88,7 +88,11 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
         if (CurrentNivel == 1)
         {
             //LevelManager
-            if (initScreen.canvasGroup.alpha == 1 && GameManager.Instance.isLevel1Completed) GameManager.Instance.ChangeLevel(2);
+            if (initScreen.canvasGroup.alpha == 1 && GameManager.Instance.isLevel1Completed)
+            {
+                PData.UploadData();
+                GameManager.Instance.ChangeLevel(2);
+            } 
             if (Input.GetKeyDown(KeyCode.Y)) GameManager.Instance.isLevel1Completed = true;
         }
         if (CurrentNivel == 2) HandleLevel2Logic();
@@ -284,7 +288,6 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
                 Debug.Log($"La cantidad de botiquines recojidos fue {medikitspicked}, en el nivel {levelID}, por el usuario {userId}");
                 AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID, userId);
                 Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
-                PData.UploadData();
             }
 
 
