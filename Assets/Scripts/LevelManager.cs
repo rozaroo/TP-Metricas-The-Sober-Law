@@ -90,6 +90,15 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
             //LevelManager
             if (initScreen.canvasGroup.alpha == 1 && GameManager.Instance.isLevel1Completed)
             {
+                //Enviar evento analítico
+                //Obtener el ID del nivel actual
+                string levelID = SceneManager.GetActiveScene().name;
+                // Obtener el user_id desde el GameManager
+                string userId = GameManager.Instance.userId;
+                AnalyticsManager.instance.medkitPickedUp(medikitspicked, levelID, userId);
+                Debug.Log($"La cantidad de botiquines recojidos fue {medikitspicked}, en el nivel {levelID}, por el usuario {userId}");
+                AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID, userId);
+                Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
                 PData.UploadData();
                 GameManager.Instance.ChangeLevel(2);
             } 
@@ -279,15 +288,6 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
             if (enemiesToDefeat == 0) 
             {
                 GameManager.Instance.isLevel1Completed = true;
-                //Enviar evento analítico
-                //Obtener el ID del nivel actual
-                string levelID = SceneManager.GetActiveScene().name;
-                // Obtener el user_id desde el GameManager
-                string userId = GameManager.Instance.userId;
-                AnalyticsManager.instance.medkitPickedUp(medikitspicked, levelID, userId);
-                Debug.Log($"La cantidad de botiquines recojidos fue {medikitspicked}, en el nivel {levelID}, por el usuario {userId}");
-                AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID, userId);
-                Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
             }
 
 
