@@ -95,11 +95,11 @@ public class LevelManager : MonoBehaviour, IPlayerObserver, IHpObserver
                 string levelID = SceneManager.GetActiveScene().name;
                 // Obtener el user_id desde el GameManager
                 string userId = GameManager.Instance.userId;
+                PData.UploadData();
                 AnalyticsManager.instance.medkitPickedUp(medikitspicked, levelID, userId);
                 Debug.Log($"La cantidad de botiquines recojidos fue {medikitspicked}, en el nivel {levelID}, por el usuario {userId}");
                 AnalyticsManager.instance.ButtonSPressed(sPressCount, levelID, userId);
                 Debug.Log($"Tecla S presionada {sPressCount} veces en el nivel {levelID}, por el usuario {userId}");
-                PData.UploadData();
                 GameManager.Instance.ChangeLevel(2);
             } 
             if (Input.GetKeyDown(KeyCode.Y)) GameManager.Instance.isLevel1Completed = true;
